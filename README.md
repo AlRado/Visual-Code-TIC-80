@@ -35,7 +35,7 @@ TIC-80 API user snippets for Visual Studio Code.
 ================================================
 1. Open the file in the language to which you want to add snippets (.lua, .moon, .js, .ts)
 2. In Visual Studio Code open: File->Preferences->User Snippets, find language (e.g. lua), copy and paste the corresponding json.
-
+![](resources/snipets.gif)
 
 
 # Visual-Code-TIC-80
