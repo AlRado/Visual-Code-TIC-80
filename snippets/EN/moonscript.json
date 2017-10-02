@@ -1,0 +1,287 @@
+{
+	//
+	// TIC-80 v.0.45.0 API
+	//
+	"TIC-80 print": {
+		"prefix": "print",
+		"body": [
+			"print(\"${1:text}\"${2:,${3:x},${4:y}${5:,${6:color}${7:,${8:fixed}${9:,${10:scale}}}}})",
+			"$0"
+		],
+		"description": "TIC-80 API \nThis will simply print text to the screen using the font defined in config."
+	},
+	"TIC-80 font": {
+		"prefix": "font",
+		"body": [
+			"font(\"${1:text}\"${2:,${3:x},${4:y}${5:,${6:alpha_color}${7:,${8:w},${9:h}${10:,${11:fixed}${12:,${13:scale}}}}}})",
+			"$0"
+		],
+		"description": "TIC-80 API \nThis function will draw text to the screen using part of the spritesheet as the font."
+	},
+	"TIC-80 clip": {
+		"prefix": "clip",
+		"body": [
+			"clip(${1:${2:x},${3:y},${4:width},${5:height}})",
+			"$0"
+		],
+		"description": "TIC-80 API \nThis function will limit what is drawn to the screen by x,y,w,h. Things drawn outside of the parameters will not be drawn to the screen."
+	},
+	"TIC-80 cls": {
+		"prefix": "cls",
+		"body": [
+			"cls(${1:color})",
+			"$0"
+		],
+		"description": "TIC-80 API \nWhen called this function clear all the screen using the color passed as argument."
+	},
+	"TIC-80 pix": {
+		"prefix": "pix",
+		"body": [
+			"pix(${1:x},${2:y},${3:color})",
+			"$0"
+		],
+		"description": "TIC-80 API \nThis function color a pixel at the coordinates specified. \nThe function can be used also to interrogate the color of a pixel in the screen."
+	},
+	"TIC-80 line": {
+		"prefix": "line",
+		"body": [
+			"line(${1:x0},${2:y0},${3:x1},${4:y1},${5:color})",
+			"$0"
+		],
+		"description": "TIC-80 API \nIt draw a straight colored line from (x0,y0) point to (x1,y1) point."
+	},
+	"TIC-80 rect": {
+		"prefix": "rect",
+		"body": [
+			"rect(${1:x},${2:y},${3:width},${4:height},${5:color})",
+			"$0"
+		],
+		"description": "TIC-80 API \nThis function draw a colored filled rectangle at the position request. If you need to draw only the border see rectb"
+	},
+	"TIC-80 rectb": {
+		"prefix": "rectb",
+		"body": [
+			"rectb(${1:x},${2:y},${3:width},${4:height},${5:color})",
+			"$0"
+		],
+		"description": "TIC-80 API \nThis function draw a rectangle border of one pixel size at the position request. If you need to fill the rectangle with a color see rect instead."
+	},
+	"TIC-80 circ": {
+		"prefix": "circ",
+		"body": [
+			"circ(${1:x},${2:y},${3:radius},${4:color})",
+			"$0"
+		],
+		"description": "TIC-80 API \nIt draw a filled circle with center x and y of the radius requested. It use bresenham algorithm."
+	},
+	"TIC-80 circb": {
+		"prefix": "circb",
+		"body": [
+			"circb(${1:x},${2:y},${3:radius},${4:color})",
+			"$0"
+		],
+		"description": "TIC-80 API \nIt draw a circumference with center x and y of the radius requested. It use bresenham algorithm."
+	},
+	"TIC-80 spr": {
+		"prefix": "spr",
+		"body": [
+			"spr(${1:id},${2:x},${3:y}${4:,${5:alpha_color}${6:,${7:scale}${8:,${9:flip},${10:${11:rotate}${12:,${13:cell_width},${14:cell_height}}}}}})",
+			"$0"
+		],
+		"description": "TIC-80 API \nIt will put the sprite number index in the x and y coordinate."
+	},
+	"TIC-80 btn": {
+		"prefix": "btn",
+		"body": [
+			"btn(${1:id})",
+			"$0"
+		],
+		"description": "TIC-80 API \nThis function allow to read the status of one of the buttons attached to TIC. The function return true when the key interrogated using its id, is pressed."
+	},
+	"TIC-80 btnp": {
+		"prefix": "btnp",
+		"body": [
+			"btnp(${1:id})",
+			"$0"
+		],
+		"description": "TIC-80 API \nThis function allow to read the status of one of the buttons attached to TIC. The function return true value only in the moment the key is pressed. It can also be used with hold and period parameters that allow to return true keeping the key pressed. After the hold time is elapsed the function return true every time period is passed. Time is expressed in ticks: at 60 fps it means you need to use 120 to wait 2 seconds."
+	},
+	"TIC-80 sfx": {
+		"prefix": "sfx",
+		"body": [
+			"sfx(${1:${2:id}${3:,${4:note}${5:,${6:duration}${7:,${8:channel}${9:,${10:volume}${11:,${12:speed}}}}}}})",
+			"$0"
+		],
+		"description": "TIC-80 API \nThis function will play a sound from the sfx editor."
+	},
+	"TIC-80 map": {
+		"prefix": "map",
+		"body": [
+			"map(${1:${2:cell_x},${3:cell_y}${4:,${5:cell_w},${6:cell_h}${7:,${8:x},${9:y}${10:,${11:alpha_color}${12:,${13:scale}${14:,${15:remap}}}}}}})",
+			"$0"
+		],
+		"description": "TIC-80 API \nThe map is measured in cells, 8x8 blocks where you can place sprites in the map editor. This function will draw the entire map, or parts of it. The map's cell limit is 240x136."
+	},
+	"TIC-80 mget": {
+		"prefix": "mget",
+		"body": [
+			"mget(${1:cell_x},${2:cell_y})",
+			"$0"
+		],
+		"description": "TIC-80 API \nGet map tile index"
+	},
+	"TIC-80 mset": {
+		"prefix": "mset",
+		"body": [
+			"mset(${1:cell_x},${2:cell_y},${3:id})",
+			"$0"
+		],
+		"description": "TIC-80 API \nThis function will change the sprite in map as specified coordinates. By default, changes made are only kept while the current game is running. To make permanent changes to the map, see sync"
+	},
+	"TIC-80 music": {
+		"prefix": "music",
+		"body": [
+			"music(${1:${2:track}${3:,${4:frame}${5:,${6:row}${7:,${8:loop}}}}})",
+			"$0"
+		],
+		"description": "TIC-80 API \nIt starts playing the track created in the Music Editor. Call without arguments to stop the music."
+	},
+	"TIC-80 peek": {
+		"prefix": "peek",
+		"body": [
+			"peek(${1:address})",
+			"$0"
+		],
+		"description": "TIC-80 API \nThis function allow to read the memory from TIC."
+	},
+	"TIC-80 poke": {
+		"prefix": "poke",
+		"body": [
+			"poke(${1:address},${2:value})",
+			"$0"
+		],
+		"description": "TIC-80 API \nThis function allows you to write to the virtual RAM of TIC. The address should be specified in hexadecimal format, and values should be given in decimal."
+	},
+	"TIC-80 peek4": {
+		"prefix": "peek4",
+		"body": [
+			"peek4(${1:address})",
+			"$0"
+		],
+		"description": "TIC-80 API \nRead a half byte value from RAM"
+	},
+	"TIC-80 poke4": {
+		"prefix": "poke4",
+		"body": [
+			"poke4(${1:address},${2:value})",
+			"$0"
+		],
+		"description": "TIC-80 API \nWrite a half byte value to RAM"
+	},
+	"TIC-80 memcpy": {
+		"prefix": "memcpy",
+		"body": [
+			"memcpy(${1:to_addr},${2:from_addr},${3:len})",
+			"$0"
+		],
+		"description": "TIC-80 API \nThis function allow to copy a continuous block of the RAM memory of TIC to an another address. Address are in hexadecimal format, values are decimal."
+	},
+	"TIC-80 memset": {
+		"prefix": "memset",
+		"body": [
+			"memset(${1:address},${2:value},${3:len})",
+			"$0"
+		],
+		"description": "TIC-80 API \nThis function allow to write a continuous block of the same value to the RAM memory of TIC. Address are in hexadecimal format, values are decimal."
+	},
+	"TIC-80 pmem": {
+		"prefix": "pmem",
+		"body": [
+			"pmem(${1:index},${2:value})",
+			"$0"
+		],
+		"description": "TIC-80 API \nThis function allow to save and retrieve data in one of the 7 slots available in the persistent memory."
+	},
+	"TIC-80 trace": {
+		"prefix": "trace",
+		"body": [
+			"trace(\"${1:text}\"${2:,${3:color}})",
+			"$0"
+		],
+		"description": "TIC-80 API \nThis is a service function useful to debug your code. It will print back in the console the parameter passed."
+	},
+	"TIC-80 time": {
+		"prefix": "time",
+		"body": [
+			"time()",
+			"$0"
+		],
+		"description": "TIC-80 API \nThe function return elapsed time from the start of the cartridge expressed in milliseconds. Useful to take track of the time, animate items and rise events."
+	},
+	"TIC-80 mouse": {
+		"prefix": "mouse",
+		"body": [
+			"${1:mx},${2:my},${3:mp}=mouse()",
+			"$0"
+		],
+		"description": "TIC-80 API \nThis function returns mouse coordinates and pressed state. \nFor use this function you need to set cartridge metadata input to mouse.\nBe careful, activating mouse support will turn off the gamepad."
+	},
+	"TIC-80 tri": {
+		"prefix": "tri",
+		"body": [
+			"tri(${1:x1},${2:y1},${3:x2},${4:y2},${5:x3},${6:y3},${7:color})",
+			"$0"
+		],
+		"description": "TIC-80 API \nIt draw a triangle filled with color"
+	},
+	// Special functions
+	"TIC-80 TIC": {
+		"prefix": "tic",
+		"body": [
+			"export TIC=->",
+			"\t$0"
+		],
+		"description": "Main update function TIC-80"
+	},
+	"TIC-80 scanline": {
+		"prefix": "scanline",
+		"body": [
+			"export scanline=(scnline)->",
+			"\t$0"
+		],
+		"description": "Line update function TIC-80"
+	},
+	"TIC-80 init": {
+		"prefix": "init",
+		"body": [
+			"export init=->",
+			"\t$0",
+			"",
+			"init()"
+		],
+		"description": "Init function TIC-80"
+    },
+    // Cartridge metadata
+	"TIC-80 cartridge metadata": {
+		"prefix": "ticmeta",
+		"body": [
+			"-- title:  ${1:game title}",
+			"-- author: ${2:game developer}",
+			"-- desc:   ${3:short description}",
+			"-- script: ${4:moon}",
+			"${5:-- saveid: ${6:gameName}}",
+			"${7:-- input: mouse}",
+			"$0"
+		],
+		"description": "TIC-80 API \nCartridge metadata"
+	},
+	// Callback for map function
+	"TIC-80 remap": {
+		"prefix": "remap",
+		"body": [
+			"export remap=(tile,x,y)->",
+			"\t$0"
+		],
+		"description": "TIC-80 API \nThe map function’s last parameter is a powerful callback function​ for changing the sprites that are drawn while calling map. This remap function can be used to rotate, flip and replace sprites while the game is running. Unlike mset that saves changes to the map. This special function can be used to create animated tiles or replace the tiles completely. Some examples like changing sprites to open doorways, hide sprites used to spawn objects in your game, and even to emit the objects themselves."
+	}
+}
