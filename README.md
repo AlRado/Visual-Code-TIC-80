@@ -37,6 +37,13 @@ TIC-80 API user snippets for Visual Studio Code.
 2. In Visual Studio Code open: File->Preferences->User Snippets, find language (e.g. lua), copy and paste the corresponding json.
 ![](resources/snipets.gif)
 
+TIC-80 API declarative files (TypeScript) and documentation.
+============================================================
+1. In order for TypeScript not to cause errors related to the application of TIC-80 API functions, copy the file tic80_api.d.ts to your project.
+In this file, all functions of the TIC-80 API are declared and documented.
+2. To display a description of the functions of the TIC-80 API when working with JavaScript, simply open the tic-80_api.d.ts file in Visual Studio Code and leave it open. If necessary, restart the editor.
+![](resources/docs.gif)
+
 
 # Visual-Code-TIC-80
 Настройки Visual Studio Code для разработчиков игр TIC-80.
@@ -73,3 +80,9 @@ TIC-80 API пользовательские сниппеты для Visual Studi
 ============================================================
 1. Откройте файл на том языке, к которому Вы хотите добавить сниппеты (.lua, .moon, .js, .ts)
 2. В Visual Studio Code откройте: File->Preferences->User Snippets, найдите язык (например lua), скопируйте и вставьте соответствующий json.
+
+TIC-80 API декларирующие файлы(TypeScript) и документация.
+==========================================================
+1. Для того чтобы TypeScript не вызывал ошибки связанные с применением функций TIC-80 API, скопируйте в свой проект файл tic80_api.d.ts 
+В этом файле задекларированы и задокументированы все функции TIC-80 API.
+2. Для отображения описания функций TIC-80 API при работе с JavaScript просто откройте файл tic-80_api.d.ts в Visual Studio Code и оставьте открытым. При необходимости перезапустите редактор.
