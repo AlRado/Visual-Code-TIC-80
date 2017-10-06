@@ -1,0 +1,292 @@
+{
+	//
+	// TIC-80 v.0.45.0 API
+	//
+	"TIC-80 print": {
+		"prefix": "print",
+		"body": [
+			"print(\"${1:text}\"${2:,${3:x},${4:y}${5:,${6:color}${7:,${8:fixed}${9:,${10:scale}}}}});",
+			"$0"
+		],
+		"description": "TIC-80 API \nEcrit un texte à l'écran en utilisant la police définit dans le fichier config."
+	},
+	"TIC-80 font": {
+		"prefix": "font",
+		"body": [
+			"font(\"${1:text}\"${2:,${3:x},${4:y}${5:,${6:alpha_color}${7:,${8:w},${9:h}${10:,${11:fixed}${12:,${13:scale}}}}}});",
+			"$0"
+		],
+		"description": "TIC-80 API \nCette fonction dessine un texte à l'écran en utilisant une partie de de la feuille de sprite comme police."
+	},
+	"TIC-80 clip": {
+		"prefix": "clip",
+		"body": [
+			"clip(${1:${2:x},${3:y},${4:width},${5:height}});",
+			"$0"
+		],
+		"description": "TIC-80 API \nCette fonction limite ce qui est dessiné sur l'écran par x, y, w, h. Les choses dessinées en dehors des paramètres ne seront pas dessiné sur l'écran."
+	},
+	"TIC-80 cls": {
+		"prefix": "cls",
+		"body": [
+			"cls(${1:color});",
+			"$0"
+		],
+		"description": "TIC-80 API \n cette fonction efface tout l'écran en utilisant la couleur passée comme argument."
+	},
+	"TIC-80 pix": {
+		"prefix": "pix",
+		"body": [
+			"pix(${1:x},${2:y},${3:color});",
+			"$0"
+		],
+		"description": "TIC-80 API \nCette fonction permet de colorer un pixel aux coordonnées spécifiées. \nLa fonction peut également être utilisée pour interroger la couleur d'un pixel dans l'écran."
+	},
+	"TIC-80 line": {
+		"prefix": "line",
+		"body": [
+			"line(${1:x0},${2:y0},${3:x1},${4:y1},${5:color});",
+			"$0"
+		],
+		"description": "TIC-80 API \nIl dessine une ligne droite de couleur du point (x0, y0) au point (x1, y1)."
+	},
+	"TIC-80 rect": {
+		"prefix": "rect",
+		"body": [
+			"rect(${1:x},${2:y},${3:width},${4:height},${5:color});",
+			"$0"
+		],
+		"description": "TIC-80 API \nCette fonction trace un rectangle rempli de couleur à la position demandée. Si vous devez dessiner seulement la bordure, voir la fonction rectbe"
+	},
+	"TIC-80 rectb": {
+		"prefix": "rectb",
+		"body": [
+			"rectb(${1:x},${2:y},${3:width},${4:height},${5:color});",
+			"$0"
+		],
+		"description": "TIC-80 API \nCette fonction trace une bordure rectangulaire d'une taille de pixel à la position demandée. Si vous devez remplir le rectangle avec une couleur, voir la fonction rect."
+	},
+	"TIC-80 circ": {
+		"prefix": "circ",
+		"body": [
+			"circ(${1:x},${2:y},${3:radius},${4:color});",
+			"$0"
+		],
+		"description": "TIC-80 API \nDessine un cercle rempli avec le centre x et y du rayon demandé. Il utilise l'algorithme de bresenham."
+	},
+	"TIC-80 circb": {
+		"prefix": "circb",
+		"body": [
+			"circb(${1:x},${2:y},${3:radius},${4:color});",
+			"$0"
+		],
+		"description": "TIC-80 API \n Il dessine une circonférence avec le centre x et y du rayon demandé. Il utilise l'algorithme de bresenham."
+	},
+	"TIC-80 spr": {
+		"prefix": "spr",
+		"body": [
+			"spr(${1:id},${2:x},${3:y}${4:,${5:alpha_color}${6:,${7:scale}${8:,${9:flip},${10:${11:rotate}${12:,${13:cell_width},${14:cell_height}}}}}});",
+			"$0"
+		],
+		"description": "TIC-80 API \n met le numéro d'index du sprite dans les coordonnées x et y."
+	},
+	"TIC-80 btn": {
+		"prefix": "btn",
+		"body": [
+			"btn(${1:id});",
+			"$0"
+		],
+		"description": "TIC-80 API \nCette fonction permet de lire l'état de l'un des boutons attachés à TIC. La fonction retourne vraie lorsque la touche interrogée à l'aide de son identifiant est pressée."
+	},
+	"TIC-80 btnp": {
+		"prefix": "btnp",
+		"body": [
+			"btnp(${1:id});",
+			"$0"
+		],
+		"description": "TIC-80 API \nCette fonction permet de lire l'état de l'un des boutons attachés à TIC. La fonction renvoie la valeur réelle uniquement au moment où la touche est enfoncée. Il peut également être utilisé avec les paramètres de maintien et de période qui permettent de renvoyer true en maintenant la touche enfoncée. Une fois le temps de maintien écoulé, la fonction retourne vraie chaque période passée. Le temps est exprimé en tiques: à 60 fps, cela signifie que vous devez utiliser 120 pour attendre 2 secondes."
+	},
+	"TIC-80 sfx": {
+		"prefix": "sfx",
+		"body": [
+			"sfx(${1:${2:id}${3:,${4:note}${5:,${6:duration}${7:,${8:channel}${9:,${10:volume}${11:,${12:speed}}}}}}});",
+			"$0"
+		],
+		"description": "TIC-80 API \nCette fonction jouera un son à partir de l'éditeur sfx."
+	},
+	"TIC-80 map": {
+		"prefix": "map",
+		"body": [
+			"map(${1:${2:cell_x},${3:cell_y}${4:,${5:cell_w},${6:cell_h}${7:,${8:x},${9:y}${10:,${11:alpha_color}${12:,${13:scale}${14:,${15:remap}}}}}}});",
+			"$0"
+		],
+		"description": "TIC-80 API \nLa carte est mesurée dans les cellules, 8x8 blocs où vous pouvez placer les sprites dans l'éditeur de cartes. Cette fonction dessine toute la carte, ou des parties de celle-ci. La limite de la cellule de la carte est 240x136."
+	},
+	"TIC-80 mget": {
+		"prefix": "mget",
+		"body": [
+			"mget(${1:cell_x},${2:cell_y});",
+			"$0"
+		],
+		"description": "TIC-80 API \nRécupère l'index de la tile map"
+	},
+	"TIC-80 mset": {
+		"prefix": "mset",
+		"body": [
+			"mset(${1:cell_x},${2:cell_y},${3:id});",
+			"$0"
+		],
+		"description": "TIC-80 API \nCette fonction modifie le sprite dans la carte en tant que coordonnées spécifiées. Par défaut, les modifications apportées ne sont conservées que lorsque le jeu actuel est en cours. Pour apporter des modifications permanentes à la carte, voir Sync"
+	},
+	"TIC-80 music": {
+		"prefix": "music",
+		"body": [
+			"music(${1:${2:track}${3:,${4:frame}${5:,${6:row}${7:,${8:loop}}}}});",
+			"$0"
+		],
+		"description": "TIC-80 API \ncommence à jouer la piste créée dans Music Editor. Appelez cette fonction sans arguments pour arrêter la musique."
+	},
+	"TIC-80 peek": {
+		"prefix": "peek",
+		"body": [
+			"peek(${1:address});",
+			"$0"
+		],
+		"description": "TIC-80 API \nCette fonction permet de lire la mémoire de TIC."
+	},
+	"TIC-80 poke": {
+		"prefix": "poke",
+		"body": [
+			"poke(${1:address},${2:value});",
+			"$0"
+		],
+		"description": "TIC-80 API \nCette fonction vous permet d'écrire sur la RAM virtuelle de TIC. L'adresse doit être spécifiée en format hexadécimal, et les valeurs doivent être indiquées en décimales."
+	},
+	"TIC-80 peek4": {
+		"prefix": "peek4",
+		"body": [
+			"peek4(${1:address});",
+			"$0"
+		],
+		"description": "TIC-80 API \nLire une valeur de demi-octet de RAM"
+	},
+	"TIC-80 poke4": {
+		"prefix": "poke4",
+		"body": [
+			"poke4(${1:address},${2:value});",
+			"$0"
+		],
+		"description": "TIC-80 API \nEcrire une valeur de demi-octet de RAM"
+	},
+	"TIC-80 memcpy": {
+		"prefix": "memcpy",
+		"body": [
+			"memcpy(${1:to_addr},${2:from_addr},${3:len});",
+			"$0"
+		],
+		"description": "TIC-80 API \nCette fonction permet de copier un bloc continu de la mémoire RAM de TIC vers une autre adresse. L'adresse est en format hexadécimal, les valeurs sont décimales."
+	},
+	"TIC-80 memset": {
+		"prefix": "memset",
+		"body": [
+			"memset(${1:address},${2:value},${3:len});",
+			"$0"
+		],
+		"description": "TIC-80 API \nCette fonction permet d'écrire un bloc continu de même valeur sur la mémoire RAM de TIC. L'adresse est en format hexadécimal, les valeurs sont décimales."
+	},
+	"TIC-80 pmem": {
+		"prefix": "pmem",
+		"body": [
+			"pmem(${1:index},${2:value});",
+			"$0"
+		],
+		"description": "TIC-80 API \nCette fonction permet d'enregistrer et de récupérer des données dans l'une des 7 machines à sous disponibles dans la mémoire persistante."
+	},
+	"TIC-80 trace": {
+		"prefix": "trace",
+		"body": [
+			"trace(\"${1:text}\"${2:,${3:color}});",
+			"$0"
+		],
+		"description": "TIC-80 API \nIl s'agit d'une fonction de service utile pour déboguer votre code. Il va afficher dans la console le paramètre passé."
+	},
+	"TIC-80 time": {
+		"prefix": "time",
+		"body": [
+			"time();",
+			"$0"
+		],
+		"description": "TIC-80 API \nLa fonction retourne le temps écoulé depuis le début de la cartouche exprimé en milliseconds. Utile pour suivre le temps, animer des objets et lever des évenements."
+	},
+	"TIC-80 mouse": {
+		"prefix": "mouse",
+		"body": [
+			"var mouseData=mouse();",
+			"${1:mx}=mouseData[0],${2:my}=mouseData[1],${3:mp}=mouseData[2];",
+			"$0"
+		],
+		"description": "TIC-80 API \nCette fonction retourne des coordonnées de la souris et l'état pressé. \nPour utiliser cette fonction, vous devez configurer la saisie des métadonnées de la cartouche sur la souris. \nEn faite attention, l'activation du support de la souris éteindra le gamepad"
+	},
+	"TIC-80 tri": {
+		"prefix": "tri",
+		"body": [
+			"tri(${1:x1},${2:y1},${3:x2},${4:y2},${5:x3},${6:y3},${7:color});",
+			"$0"
+		],
+		"description": "TIC-80 API \nIt dessine un triangle remplit avec de la couleur"
+	},
+	// Special functions
+	"TIC-80 TIC": {
+		"prefix": "tic",
+		"body": [
+			"function TIC() {",
+			"\t$0",
+			"}"
+		],
+		"description": "TIC-80 API \nFonction principal de mise à jour"
+	},
+	"TIC-80 scanline": {
+		"prefix": "scanline",
+		"body": [
+			"function scanline(scnline) {",
+			"\t$0",
+			"}"
+		],
+		"description": "TIC-80 API \nfonction de mise à jour des lignes"
+	},
+	"TIC-80 init": {
+		"prefix": "init",
+		"body": [
+			"function init() {",
+			"\t$0",
+			"}",
+			"",
+			"init();"
+		],
+		"description": "TIC-80 API \nFonction d'initialisation"
+	},
+	// Cartridge metadata
+	"TIC-80 cartridge metadata": {
+		"prefix": "ticmeta",
+		"body": [
+			"// title:  ${1:game title}",
+			"// author: ${2:game developer}",
+			"// desc:   ${3:short description}",
+			"// script: ${4:js}",
+			"${5:// saveid: ${6:gameName}}",
+			"${7:// input: mouse}",
+			"$0"
+		],
+		"description": "TIC-80 API \nCartridge metadata"
+	},
+	// Callback for map function
+	"TIC-80 remap": {
+		"prefix": "remap",
+		"body": [
+			"function remap(tile,x,y) {",
+			"\t$0",
+			"}"
+		],
+		"description": "TIC-80 API \nLe dernier paramètre de la fonction de map est une puissante fonction de rappel pour changer les sprites qui sont dessinées lors de l'appel de map. Cette fonction de remappage peut être utilisée pour faire pivoter, déplacer et remplacer les sprites pendant que le jeu est en cours d'exécution. À la différence de mset qui enregistre des modifications sur la carte. Cette fonction spéciale peut être utilisée pour créer des carreaux animés ou remplacer complètement les tiles. Quelques exemples, comme changer les sprites pour ouvrir les portes, cacher les sprites utilisés pour engendrer des objets dans votre jeu, et même pour émettre les objets eux-mêmes."
+	}
+}
