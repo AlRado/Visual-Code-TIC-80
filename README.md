@@ -23,7 +23,11 @@ Run JavaScript, Lua or MoonScript code in TIC-80 with output to the console.
     // Whether to save the current file before running.
     "code-runner.saveFileBeforeRun": true,
     // Whether to clear previous output before each run.
-    "code-runner.clearPreviousOutput": true
+    "code-runner.clearPreviousOutput": true,
+    // Whether to ignore selection to always run entire file.
+    "code-runner.ignoreSelection": true,
+    // The number of spaces a tab is equal to. This setting is overriden based on the file contents when `editor.detectIndentation` is on.
+    "editor.tabSize": 2
 ```
 Where path `C:\\Users\\alrad\\AppData\\Roaming\\com.nesbox.tic\\TIC-80\\` - is the folder where your cards with *.tic are saved. **If you want find it, type `folder` in TIC-80 console.**  
 If a cartridge with the same name as the code file name is not found, the default cartridge will start and your code will be loaded into it.  
@@ -68,7 +72,11 @@ In this file, all functions of the TIC-80 API are declared and documented.
     // Whether to save the current file before running.
     "code-runner.saveFileBeforeRun": true,
     // Whether to clear previous output before each run.
-    "code-runner.clearPreviousOutput": true
+    "code-runner.clearPreviousOutput": true,
+    // Whether to ignore selection to always run entire file.
+    "code-runner.ignoreSelection": true,
+    // The number of spaces a tab is equal to. This setting is overriden based on the file contents when `editor.detectIndentation` is on.
+    "editor.tabSize": 2
 ```
 Где путь `C:\\Users\\alrad\\AppData\\Roaming\\com.nesbox.tic\\TIC-80\\` - это путь к папке, где сохранены Ваши файлы с расширением *.tic. **Если Вам нужно найти её, наберите команду `folder` в консоли TIC-80.**  
 Если картридж с таким же именем как и имя файла кода не найден, запустится дефолтный картридж и в него загрузится Ваш код.  
