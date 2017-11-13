@@ -14,9 +14,9 @@ Run JavaScript, Lua or MoonScript code in TIC-80 with output to the console.
 ```json
     // Set the executor of each language.
     "code-runner.executorMap": {
-        "javascript":   "tic.exe C:\\Users\\alrad\\AppData\\Roaming\\com.nesbox.tic\\TIC-80\\$fileNameWithoutExt.tic -code $fullFileName",
-        "lua":          "tic.exe C:\\Users\\alrad\\AppData\\Roaming\\com.nesbox.tic\\TIC-80\\$fileNameWithoutExt.tic -code $fullFileName",      
-        "moon":         "tic.exe C:\\Users\\alrad\\AppData\\Roaming\\com.nesbox.tic\\TIC-80\\$fileNameWithoutExt.tic -code $fullFileName"      
+        "javascript":   "tic.exe C:\\Users\\alrad\\AppData\\Roaming\\com.nesbox.tic\\TIC-80\\$fileNameWithoutExt.tic -code-watch $fullFileName",
+        "lua":          "tic.exe C:\\Users\\alrad\\AppData\\Roaming\\com.nesbox.tic\\TIC-80\\$fileNameWithoutExt.tic -code-watch $fullFileName",      
+        "moonscript":   "tic.exe C:\\Users\\alrad\\AppData\\Roaming\\com.nesbox.tic\\TIC-80\\$fileNameWithoutExt.tic -code-watch $fullFileName"      
     },
     // Set the working directory.
     "code-runner.cwd": "C:\\Program Files\\TIC-80\\",
@@ -63,9 +63,9 @@ In this file, all functions of the TIC-80 API are declared and documented.
 ```json
     // Set the executor of each language.
     "code-runner.executorMap": {
-        "javascript":   "tic.exe C:\\Users\\alrad\\AppData\\Roaming\\com.nesbox.tic\\TIC-80\\$fileNameWithoutExt.tic -code $fullFileName",
-        "lua":          "tic.exe C:\\Users\\alrad\\AppData\\Roaming\\com.nesbox.tic\\TIC-80\\$fileNameWithoutExt.tic -code $fullFileName",      
-        "moon":         "tic.exe C:\\Users\\alrad\\AppData\\Roaming\\com.nesbox.tic\\TIC-80\\$fileNameWithoutExt.tic -code $fullFileName"     
+        "javascript":   "tic.exe C:\\Users\\alrad\\AppData\\Roaming\\com.nesbox.tic\\TIC-80\\$fileNameWithoutExt.tic -code-watch $fullFileName",
+        "lua":          "tic.exe C:\\Users\\alrad\\AppData\\Roaming\\com.nesbox.tic\\TIC-80\\$fileNameWithoutExt.tic -code-watch $fullFileName",      
+        "moonscript":   "tic.exe C:\\Users\\alrad\\AppData\\Roaming\\com.nesbox.tic\\TIC-80\\$fileNameWithoutExt.tic -code-watch $fullFileName"     
     },
     // Set the working directory.
     "code-runner.cwd": "C:\\Program Files\\TIC-80\\",
