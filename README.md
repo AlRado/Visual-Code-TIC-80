@@ -10,16 +10,15 @@ For convenient work with JavaScript, Lua and MoonScript enable them in Visual St
 Run JavaScript, Lua or MoonScript code in TIC-80 with output to the console.
 ============================================================================ 
 1. Install [Code Runner](https://marketplace.visualstudio.com/items?itemName=formulahendry.code-runner) plugin for Visual Studio Code.
-2. Describe the following settings in the workspace settings:
+2. Add tic80 executable to path environment variable or add into settings "code-runner.cwd": "C:\\Program Files\\TIC-80\\"- path to your tic application.
+3. Describe the following settings in the workspace settings or user settings:
 ```json
     // Set the executor of each language.
     "code-runner.executorMap": {
-        "javascript":   "tic.exe C:\\Users\\alrad\\AppData\\Roaming\\com.nesbox.tic\\TIC-80\\$fileNameWithoutExt.tic -code-watch $fullFileName",
-        "lua":          "tic.exe C:\\Users\\alrad\\AppData\\Roaming\\com.nesbox.tic\\TIC-80\\$fileNameWithoutExt.tic -code-watch $fullFileName",      
-        "moonscript":   "tic.exe C:\\Users\\alrad\\AppData\\Roaming\\com.nesbox.tic\\TIC-80\\$fileNameWithoutExt.tic -code-watch $fullFileName"      
+        "javascript":   "tic80 C:\\Users\\alrad\\AppData\\Roaming\\com.nesbox.tic\\TIC-80\\$fileNameWithoutExt.tic -code-watch $fullFileName",
+        "lua":          "tic80 C:\\Users\\alrad\\AppData\\Roaming\\com.nesbox.tic\\TIC-80\\$fileNameWithoutExt.tic -code-watch $fullFileName",      
+        "moonscript":   "tic80 C:\\Users\\alrad\\AppData\\Roaming\\com.nesbox.tic\\TIC-80\\$fileNameWithoutExt.tic -code-watch $fullFileName"      
     },
-    // Set the working directory.
-    "code-runner.cwd": "C:\\Program Files\\TIC-80\\",
     // Whether to save the current file before running.
     "code-runner.saveFileBeforeRun": true,
     // Whether to clear previous output before each run.
@@ -27,9 +26,7 @@ Run JavaScript, Lua or MoonScript code in TIC-80 with output to the console.
 ```
 Where path `C:\\Users\\alrad\\AppData\\Roaming\\com.nesbox.tic\\TIC-80\\` - is the folder where your cards with *.tic are saved. **If you want find it, type `folder` in TIC-80 console.**  
 If a cartridge with the same name as the code file name is not found, the default cartridge will start and your code will be loaded into it.  
-`"code-runner.cwd": "C:\\Program Files\\TIC-80\\"` - path to your tic application.  
-
-3. To start, click on the "Run Code" button or the `CTRL+ALT+N`
+4. To start, click on the "Run Code" button or the `CTRL+ALT+N`
 
 TIC-80 API user snippets for Visual Studio Code.
 ================================================
@@ -55,16 +52,15 @@ In this file, all functions of the TIC-80 API are declared and documented.
 Запуск кода JavaScript, Lua или MoonScript в TIC-80 с выводом в консоль.
 ======================================================================== 
 1. Установите [Code Runner](https://marketplace.visualstudio.com/items?itemName=formulahendry.code-runner) плагин для Visual Studio Code.
-2. Пропишите следующие настройки в параметрах рабочей области:
+2. Добавьте tic80 исполняемый файл в переменную окружения Path или добавьте в настройки "code-runner.cwd": "C:\\Program Files\\TIC-80\\" - путь к вашему приложению tic.
+3. Пропишите следующие настройки в параметрах рабочей области или в параметрах пользователя:
 ```json
     // Set the executor of each language.
     "code-runner.executorMap": {
-        "javascript":   "tic.exe C:\\Users\\alrad\\AppData\\Roaming\\com.nesbox.tic\\TIC-80\\$fileNameWithoutExt.tic -code-watch $fullFileName",
-        "lua":          "tic.exe C:\\Users\\alrad\\AppData\\Roaming\\com.nesbox.tic\\TIC-80\\$fileNameWithoutExt.tic -code-watch $fullFileName",      
-        "moonscript":   "tic.exe C:\\Users\\alrad\\AppData\\Roaming\\com.nesbox.tic\\TIC-80\\$fileNameWithoutExt.tic -code-watch $fullFileName"     
+        "javascript":   "tic80 C:\\Users\\alrad\\AppData\\Roaming\\com.nesbox.tic\\TIC-80\\$fileNameWithoutExt.tic -code-watch $fullFileName",
+        "lua":          "tic80 C:\\Users\\alrad\\AppData\\Roaming\\com.nesbox.tic\\TIC-80\\$fileNameWithoutExt.tic -code-watch $fullFileName",      
+        "moonscript":   "tic80 C:\\Users\\alrad\\AppData\\Roaming\\com.nesbox.tic\\TIC-80\\$fileNameWithoutExt.tic -code-watch $fullFileName"     
     },
-    // Set the working directory.
-    "code-runner.cwd": "C:\\Program Files\\TIC-80\\",
     // Whether to save the current file before running.
     "code-runner.saveFileBeforeRun": true,
     // Whether to clear previous output before each run.
@@ -72,8 +68,6 @@ In this file, all functions of the TIC-80 API are declared and documented.
 ```
 Где путь `C:\\Users\\alrad\\AppData\\Roaming\\com.nesbox.tic\\TIC-80\\` - это путь к папке, где сохранены Ваши файлы с расширением *.tic. **Если Вам нужно найти её, наберите команду `folder` в консоли TIC-80.**  
 Если картридж с таким же именем как и имя файла кода не найден, запустится дефолтный картридж и в него загрузится Ваш код.  
-`"code-runner.cwd": "C:\\Program Files\\TIC-80\\"` - путь к исполняемому файлу tic.  
-
 3. Для запуска нажмите на кнопку "Run Code" или клавиши `CTRL+ALT+N`
 
 TIC-80 API пользовательские сниппеты для Visual Studio Code.
