@@ -101,7 +101,7 @@
 	"TIC-80 btnp": {
 		"prefix": "btnp",
 		"body": [
-			"btnp(${1:id});",
+			"btnp(${1:id}${2:,${3:hold},${4:period}});",
 			"$0"
 		],
 		"description": "TIC-80 API \nCette fonction permet de lire l'état de l'un des boutons attachés à TIC. La fonction renvoie la valeur réelle uniquement au moment où la touche est enfoncée. Il peut également être utilisé avec les paramètres de maintien et de période qui permettent de renvoyer true en maintenant la touche enfoncée. Une fois le temps de maintien écoulé, la fonction retourne vraie chaque période passée. Le temps est exprimé en tiques: à 60 fps, cela signifie que vous devez utiliser 120 pour attendre 2 secondes."
