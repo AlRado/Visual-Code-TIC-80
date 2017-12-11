@@ -1,6 +1,6 @@
 {
 	//
-	// TIC-80 v.0.45.0 API
+	// TIC-80 v.0.50.1 API
 	//
 	"TIC-80 print": {
 		"prefix": "print",
@@ -101,7 +101,7 @@
 	"TIC-80 btnp": {
 		"prefix": "btnp",
 		"body": [
-			"btnp(${1:id});",
+			"btnp(${1:id}${2:,${3:hold},${4:period}});",
 			"$0"
 		],
 		"description": "TIC-80 API \nThis function allow to read the status of one of the buttons attached to TIC. The function return true value only in the moment the key is pressed. It can also be used with hold and period parameters that allow to return true keeping the key pressed. After the hold time is elapsed the function return true every time period is passed. Time is expressed in ticks: at 60 fps it means you need to use 120 to wait 2 seconds."
@@ -234,6 +234,22 @@
 			"$0"
 		],
 		"description": "TIC-80 API \nIt draw a triangle filled with color"
+  },
+  "TIC-80 textri": {
+		"prefix": "textri",
+		"body": [
+			"textri(${1:x1},${2:y1},${3:x2},${4:y2},${5:x3},${6:y3},${7:u1},${8:v1},${9:u2},${10:v2},${11:u3},${12:v3},${13:use_map},${14:chroma});",
+			"$0"
+		],
+		"description": "TIC-80 API \nIt renders a triangle filled with texture from image ram or map ram"
+	},
+	"TIC-80 sync": {
+		"prefix": "sync",
+		"body": [
+			"sync(${1:toCart});",
+			"$0"
+		],
+		"description": "TIC-80 API \nSprite/map data restores on every startup. Call sync() api to save sprite/map data modified during runtime."
 	},
 	// Special functions
 	"TIC-80 TIC": {
