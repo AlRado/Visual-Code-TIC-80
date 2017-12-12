@@ -233,7 +233,7 @@
 			"tri(${1:x1},${2:y1},${3:x2},${4:y2},${5:x3},${6:y3},${7:color});",
 			"$0"
 		],
-		"description": "TIC-80 API \nIt dessine un triangle remplit avec de la couleur"
+		"description": "TIC-80 API \nDessine un triangle remplit avec de la couleur"
   },
   "TIC-80 textri": {
 		"prefix": "textri",
@@ -241,7 +241,7 @@
 			"textri(${1:x1},${2:y1},${3:x2},${4:y2},${5:x3},${6:y3},${7:u1},${8:v1},${9:u2},${10:v2},${11:u3},${12:v3},${13:use_map},${14:chroma})",
 			"$0"
 		],
-		"description": "TIC-80 API \nIt renders a triangle filled with texture from image ram or map ram"
+		"description": "TIC-80 API \nDessine un triangle remplit avec la texture provenant d'une image de la ram ou de la carte de la ram"
 	},	
   "TIC-80 sync": {
 		"prefix": "sync",
@@ -249,7 +249,7 @@
 			"sync(${1:toCart})",
 			"$0"
 		],
-		"description": "TIC-80 API \nSprite/map data restores on every startup. Call sync() api to save sprite/map data modified during runtime."
+		"description": "TIC-80 API \nSprite / Map restaure les données à chaque démarrage. Appelez l'api sync () pour enregistrer les données d'image / sprite modifiées pendant l'exécution."
 	},
 	// Special functions
 	"TIC-80 TIC": {
